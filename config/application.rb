@@ -24,10 +24,12 @@ module App
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
-    # 追加
     # Railsアプリのタイムゾーン(default 'UTC')
     # TimeZoneList: http://api.rubyonrails.org/classes/ActiveSupport/TimeZone.html
     config.time_zone = ENV["TZ"]
+
+    # データベースの読み書きに使用するタイムゾーン(:local | :utc(default))
+    config.active_record.default_timezone = :utc
 
     config.api_only = true
   end
