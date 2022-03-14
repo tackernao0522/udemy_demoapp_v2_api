@@ -30,7 +30,8 @@ class User < ApplicationRecord
                       },
                       format: {               # 書式チェック
                         with: VALID_PASSWORD_REGEX,
+                        message: :invalid_password,
                         allow_blank: true
                       },
-                      allow_nil true # 空パスワードのアップデートを許容する。(Null(nil)の場合スキップ)
+                      allow_nil: true # 空パスワードのアップデートを許容する。(Null(nil)の場合スキップ)
 end
