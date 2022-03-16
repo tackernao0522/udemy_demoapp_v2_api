@@ -21,4 +21,9 @@ class ActiveSupport::TestCase
   # number_of_processors => 使用しているマシンのコア数(2)
   parallelize(workers: :number_of_processors)
   # parallelize(workers: 1) # 並列テストを無効にしたい場合
+
+  # アクティブなユーザーを返す
+  def active_user
+    User.find_by(activated: true)
+  end
 end
