@@ -20,7 +20,7 @@ require "rails/test_unit/railtie"
 Bundler.require(*Rails.groups)
 
 module App
- class Application < Rails::Application
+  class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
@@ -36,6 +36,9 @@ module App
 
     # $LOAD_PATHにautoload pathを追加しない(Zeitwerk有効時false推奨)
     config.add_autoload_paths_to_load_path = false
+
+    # Cookieを処理するmeddleware
+    config.middleware.use ActionDispatch::Cookies
 
     config.api_only = true
   end
