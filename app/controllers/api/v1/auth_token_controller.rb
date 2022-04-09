@@ -54,8 +54,8 @@ class Api::V1::AuthTokenController < ApplicationController
       cookies[session_key] = {
         value: refresh_token,
         expires: refresh_token_expiration,
-        secure: true Rails.env.production?,
-        http_only: true
+        http_only: true,
+        secure: Rails.env.production?
       }
     end
 
